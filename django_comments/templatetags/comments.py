@@ -352,3 +352,11 @@ def get_comment_permalink(comment, anchor_pattern=None):
     if anchor_pattern:
         return comment.get_absolute_url(anchor_pattern)
     return comment.get_absolute_url()
+
+@register.filter(name='addclass')
+def addclass(value, arg):
+    return value.as_widget(attrs={'class': arg})
+
+@register.filter('fieldtype')
+def fieldtype(field):
+    return field.field.widget.__class__.__name__
