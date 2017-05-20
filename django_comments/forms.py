@@ -98,11 +98,11 @@ class CommentDetailsForm(CommentSecurityForm):
     """
     Handles the specific details of the comment (name, comment, etc.).
     """
-    name = forms.CharField(label=pgettext_lazy("Person name", "Name"), max_length=50)
-    email = forms.EmailField(label=_("Email address"))
+    name = forms.CharField(label=pgettext_lazy("Person name", "Nome"), max_length=50)
+    email = forms.EmailField(label=_("Email"))
     url = forms.URLField(label=_("URL"), required=False)
     # Translators: 'Comment' is a noun here.
-    comment = forms.CharField(label=_('Comment'), widget=forms.Textarea,
+    comment = forms.CharField(label=_('Comentário'), widget=forms.Textarea,
                               max_length=COMMENT_MAX_LENGTH)
 
     def get_comment_object(self, site_id=None):
